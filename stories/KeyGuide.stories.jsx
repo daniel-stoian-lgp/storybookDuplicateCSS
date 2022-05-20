@@ -18,10 +18,10 @@ export const DemoKey = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 DemoKey.args = {
   children: [
-    {number: 1, text: 'Item 0'},
-    {number: 2, text: 'Item 1'},
-    {number: 3, text: 'Item 2'},
-    {number: 4, text: 'Item 3'}
+    {key: 1, text: 'Item 0'},
+    {key: 2, text: 'Item 1'},
+    {key: 3, text: 'Item 2'},
+    {key: 4, text: 'Item 3'}
   ]
 };
 
