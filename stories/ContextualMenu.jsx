@@ -1,12 +1,18 @@
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 import React, {useCallback, useState} from 'react';
 
 import { Button } from './Button'
+import css from './ContextualMenu.module.less';
 
-const Popup = () => {
+const Popup = (props) => {
+	console.log(props.direction)
 	return (
-		<div style={{width: '200px', backgroundColor: 'teal', position: 'absolute', top: '175px', left: '225px'}}>
-			<p>Item one</p>
-			<p>Item two</p>
+		<div className={css.contextualMenu}>
+			<div className={css.container}>
+				<p>Item one</p>
+				<p>Item two</p>
+			</div>
 		</div>
 	)
 }
@@ -30,4 +36,12 @@ export const ContextualMenu = () => {
 			{popupVisible ? <Popup /> : null}
 		</div>
 	)
+}
+
+Popup.propTypes = {
+	direction: PropTypes.oneOf(['above', 'below'])
+}
+
+Popup.defaultProps = {
+	direction: 'below'
 }

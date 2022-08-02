@@ -10,6 +10,10 @@ export default {
 };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <ContextualMenu {...args} />;
+const Template = (args) => <ContextualMenu direction="below"{...args} />;
 
 export const DemoKey = Template.bind({});
+
+DemoKey.args = {
+	direction: 'below'
+}
