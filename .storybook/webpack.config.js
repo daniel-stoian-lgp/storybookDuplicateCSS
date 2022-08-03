@@ -9,8 +9,28 @@ module.exports = async ({ config, mode }) => {
 	// Make whatever fine-grained changes you need
 	config.module.rules.push({
 		test: /\.less$/,
-		use: ['style-loader', 'css-loader', 'less-loader'],
-		include: path.resolve(__dirname, '../'),
+		use: [
+			{
+				loader: "style-loader"
+			},
+			{
+				loader: "css-loader",
+				options: {
+					sourceMap: true,
+					modules: true
+				}
+			},
+			{
+				loader: "less-loader",
+				options: {
+					lessOptions: {
+						modules: true,
+						sourceMap: true,
+						strictMath: true
+					},
+			} }
+		],
+		include: path.resolve(__dirname, '../')
 	});
 
 	// Return the altered config
