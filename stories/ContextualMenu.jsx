@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React, {useCallback, useState} from 'react';
 
@@ -6,10 +6,10 @@ import { Button } from './Button'
 import css from './ContextualMenu.module.less';
 
 const Popup = (props) => {
-	console.log(props.direction)
+	// console.log(props.direction)
 	return (
 		<div className={css.contextualMenu}>
-			<div className={css.container}>
+			<div className={classnames(css.container, props.direction ? css.below : null)}>
 				<p>Item one</p>
 				<p>Item two</p>
 			</div>
